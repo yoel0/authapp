@@ -75,11 +75,11 @@ describe("Creating a User", function () {
         name: "Muttbuncher",
         password: "password",
       })
-      .then(function (newUser) {
-        if (newUser.password === "password") {
-          done(newUser);
-        } else {
+      .then(function (user) {
+        if (user.validPassword("password")) {
           done();
+        } else {
+          done(user);
         }
       })
       .catch(function (error) {
@@ -97,7 +97,7 @@ describe("User instance methods", function () {
           if (user.validPassword("password")) {
             done();
           } else {
-            done(user);
+            done(!user);
           }
         })
         .catch(function (error) {

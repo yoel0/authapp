@@ -1,7 +1,7 @@
-<% if (alerts.error) { %> <% alerts.error.forEach(eachError => { %>
+<% if (alerts.error) { %> <% alerts.error.forEach(msg => { %>
 <div class="alert alert-error"><%= msg %></div>
 
-<% }); %> <% } %> <% if (alerts.success) { %> <%
-alerts.success.forEach(eachError => { %>
+<% }); %> <% } %> <% if (alerts.success) { %> <% alerts.success.forEach(msg => {
+%>
 <div class="alert alert-success"><%= msg %></div>
 <% }); %> <% } %>
